@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{entry_name}}
+{% endblock %}
+
+{% block body %}
+    {% autoescape off %}
+      {{file_content}}
+    {% endautoescape %}
+
+    <a class="btn btn-success" href="{% url 'edit' entry_name %}">Edit Entry</a>
+
+{% endblock %}
